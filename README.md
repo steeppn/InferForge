@@ -2,7 +2,7 @@
 
 InferForge is an open-source inference optimization platform for cloud AI workloads on Arm-based infrastructure.
 
-It sits in front of an inference backend as a lightweight proxy, records measurable performance data, and provides the foundation for optimization workflows such as semantic caching, reproducible benchmarking, traffic replay, and data-driven recommendations.
+It sits in front of an inference backend as a lightweight proxy, records measurable performance data, and provides the foundation for optimization workflows such as repeat-prompt caching, reproducible benchmarking, traffic replay, and data-driven recommendations.
 
 The long-term goal is to help developers answer a practical question:
 
@@ -15,7 +15,7 @@ InferForge is being built for the Arm Create: AI Optimization Challenge, Cloud A
 Inference optimization is only useful when it can be measured. InferForge is designed around that idea:
 
 - route generation requests through a simple proxy
-- cache repeat or semantically similar prompts
+- cache repeat or normalized prompts
 - measure latency and cache behavior
 - compare optimized and unoptimized workloads
 - replay traffic for repeatable tests
@@ -31,7 +31,7 @@ The current implementation establishes the proxy, cache, metrics, CLI, tests, an
 - `GET /metrics` endpoint
 - inference backend abstraction
 - mock inference backend for local development and tests
-- semantic cache abstraction
+- cache abstraction for repeat and normalized prompt matching
 - in-memory normalized prompt cache
 - metrics collector with request totals, cache hits, cache misses, hit rate, average latency, p50, and p95
 - Typer CLI with `inferforge serve`
